@@ -28,8 +28,7 @@ import static org.junit.Assert.assertThat;
 @ContextConfiguration(locations="/test-applicationContext.xml")
 
 public class UserDaoTest {
-	@Autowired
-	private ApplicationContext context;
+//	private ApplicationContext context;
 	private UserDao dao;
 	private User user1;
 	private User user2;
@@ -37,7 +36,9 @@ public class UserDaoTest {
 	
 	@Before
 	public void setUp() {
-		this.dao = context.getBean("userDao", UserDao.class);
+		this.dao = new UserDao();
+		DataSource dataSource = new SingleConnectionDataSource("jdbc:mysql://localhost/testdb", "root", "y5jeamf", true);
+		dao.setDataSource(dataSource);
 		
 		this.user1 = new User("gyumee", "박성철", "springno1");
 		this.user2 = new User("leegw700", "이길원", "springno2");
