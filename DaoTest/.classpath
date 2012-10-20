@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="G:/학교/2012/스프링/Part1/Ch1/1.5.1/lib/org.springframework.context-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="G:/학교/2012/스프링/Part1/Ch1/1.5.1/lib/org.springframework.core-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="G:/학교/2012/스프링/Part1/Ch1/1.5.1/lib/org.springframework.expression-3.0.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="G:/학교/2012/스프링/Part1/Ch2/2.2.2/lib/org.springframework.jdbc-3.0.3.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
