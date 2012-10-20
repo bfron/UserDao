@@ -2,11 +2,15 @@ package springbook.user.dao;
 
 import java.sql.SQLException;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.dao.*;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,6 +27,7 @@ import static org.junit.Assert.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/applicationContext.xml")
 
+@DirtiesContext
 public class UserDaoTest {
 	@Autowired
 	private ApplicationContext context;
@@ -38,6 +43,9 @@ public class UserDaoTest {
 		this.user1 = new User("gyumee", "박성철", "springno1");
 		this.user2 = new User("leegw700", "이길원", "springno2");
 		this.user3 = new User("bumjin", "박범진", "springno3");
+		
+		DataSource dataSource = new SingleConnectionDataSource("jdbc:mysql://localhost/testdb", "root", "y5jeamf", true);
+		dao.setDataSource(dataSource);
 	}
 	
 	public static void main(String[] args) {
