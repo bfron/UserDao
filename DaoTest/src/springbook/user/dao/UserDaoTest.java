@@ -12,12 +12,11 @@ public class UserDaoTest {
 		ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
 		UserDao dao = context.getBean("userDao", UserDao.class);
 		
-		DaoFactory factory = new DaoFactory();
-		UserDao dao1 = factory.userDao();
-		UserDao dao2 = factory.userDao();
+		UserDao dao3 = context.getBean("userDao", UserDao.class);
+		UserDao dao4 = context.getBean("userDao", UserDao.class);
 		
-		System.out.println(dao1);
-		System.out.println(dao2);
+		System.out.println(dao3);
+		System.out.println(dao4);
 		
 		User user = new User();
 		user.setId("whiteship");
