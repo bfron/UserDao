@@ -12,12 +12,6 @@ public class UserDaoTest {
 		ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
 		UserDao dao = context.getBean("userDao", UserDao.class);
 		
-		UserDao dao3 = context.getBean("userDao", UserDao.class);
-		UserDao dao4 = context.getBean("userDao", UserDao.class);
-		
-		System.out.println(dao3);
-		System.out.println(dao4);
-		
 		User user = new User();
 		user.setId("whiteship");
 		user.setName("¹é±â¼±");
